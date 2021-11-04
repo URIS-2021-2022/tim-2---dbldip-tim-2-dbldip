@@ -13,7 +13,9 @@ namespace BuildingBlocks.EventStore
 
         public AggregateRoot(IEnumerable<IEvent> events)
         {
-            foreach (var @event in events) { When(@event); }
+            foreach (var @event in events) { When(@event); 
+            //
+            }
         }
 
         protected AggregateRoot()
