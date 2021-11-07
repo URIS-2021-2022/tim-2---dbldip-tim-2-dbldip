@@ -50,33 +50,6 @@ namespace DblDip.Data
             }
         }
 
-        internal class RateConfiguration
-        {
-            public static void Seed(IEventStore store)
-            {
-                SeedRate(nameof(PhotographyRate), Price.Create(100).Value, PhotographyRate);
-
-                SeedRate(nameof(TravelRate), Price.Create(60).Value, TravelRate);
-
-                SeedRate(nameof(ConsulationRate), Price.Create(60).Value, ConsulationRate);
-
-                void SeedRate(string name, Price price, Guid id)
-                {
-                    var rate = store.FindAsync<Rate>(id).GetAwaiter().GetResult();
-
-                    rate ??= new Rate(name, price, id);
-
-                    if (rate.DomainEvents.Count > 0)
-                    {
-                        store.Add(rate);
-
-                        store.SaveChangesAsync(default).GetAwaiter().GetResult();
-                    }
-                }
-
-            }
-        }
-
         internal class CardConfiguration
         {
             public static void Seed(IEventStore store, IDblDipDbContext context)

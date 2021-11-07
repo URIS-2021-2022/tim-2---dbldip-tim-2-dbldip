@@ -12,19 +12,17 @@ namespace BuildingBlocks.EventStore
 {
     public class EventStore : DbContext, IEventStore
     {
-        private readonly IDateTime _dateTime;
         private readonly ICorrelationIdAccessor _correlationIdAccessor;
         private readonly IMediator _meditator;
 
 
         protected readonly List<IAggregateRoot> _trackedAggregates = new List<IAggregateRoot>();
         protected List<IAggregateRoot> TrackedAggregates { get; }
-        public EventStore(DbContextOptions<EventStore> options,IDateTime dateTime, ICorrelationIdAccessor correlationIdAccessor, IMediator mediator)
+        public EventStore(DbContextOptions<EventStore> options, ICorrelationIdAccessor correlationIdAccessor, IMediator mediator)
             : base(options)
         {
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
 
-            _dateTime = dateTime;
             _correlationIdAccessor = correlationIdAccessor;
             _meditator = mediator;
         }

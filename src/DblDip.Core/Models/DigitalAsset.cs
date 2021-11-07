@@ -68,24 +68,23 @@ namespace DblDip.Core.Models
             {
                 var hasContentDispositionHeader = ContentDispositionHeaderValue.TryParse(section.ContentDisposition, out ContentDispositionHeaderValue contentDisposition);
 
-                if (hasContentDispositionHeader)
+                if (hasContentDispositionHeader && MultipartRequestHelper.HasFileContentDisposition(contentDisposition))
                 {
-                    if (MultipartRequestHelper.HasFileContentDisposition(contentDisposition))
+
+                    using (var targetStream = new MemoryStream())
                     {
-                        using (var targetStream = new MemoryStream())
-                        {
-                            await section.Body.CopyToAsync(targetStream, cancellationToken);
-                            var name = $"{contentDisposition.FileName}".Trim(new char[] { '"' }).Replace("&", "and");
-                            var bytes = StreamHelper.ReadToEnd(targetStream);
-                            var contentType = section.ContentType;
+                        await section.Body.CopyToAsync(targetStream, cancellationToken);
+                        var name = $"{contentDisposition.FileName}".Trim(new char[] { '"' }).Replace("&", "and");
+                        var bytes = StreamHelper.ReadToEnd(targetStream);
+                        var contentType = section.ContentType;
 
-                            var digitalAsset = new DigitalAsset(name, bytes, contentType);
+                        var digitalAsset = new DigitalAsset(name, bytes, contentType);
 
-                            context.Add(digitalAsset);
+                        context.Add(digitalAsset);
 
-                            digitalAssets.Add(digitalAsset);
-                        }
+                        digitalAssets.Add(digitalAsset);
                     }
+
                 }
 
                 section = await reader.ReadNextSectionAsync(cancellationToken);
