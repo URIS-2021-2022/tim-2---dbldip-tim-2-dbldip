@@ -41,7 +41,7 @@ namespace DblDip.Core.Models
 
         public void When(BlogUpdated blogUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()
