@@ -81,7 +81,7 @@ namespace BuildingBlocks.EventStore
                         return storedEvent;
                     });
 
-                await _meditator?.Publish(new EventStoreChanged { Events = storedEvents });
+                await _meditator?.Publish(new EventStoreChanged { Events = storedEvents }, cancellationToken);
 
                 StoredEvents.AddRange(storedEvents);
             }
