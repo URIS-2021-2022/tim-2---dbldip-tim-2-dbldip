@@ -58,7 +58,7 @@ namespace BuildingBlocks.EventStore
         {
             foreach (var aggregateRoot in _trackedAggregates)
             {
-                var type = aggregateRoot.GetType();
+               
 
                 var storedEvents = aggregateRoot.DomainEvents
                     .Select(@event =>

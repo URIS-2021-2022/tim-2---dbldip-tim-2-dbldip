@@ -33,13 +33,13 @@ namespace DblDip.Domain.Features
         {
             private readonly IDblDipDbContext _context;
             private readonly IPasswordHasher _passwordHasher;
-            private readonly ITokenProvider _tokenProvider;
+            
             private readonly ITokenBuilder _tokenBuilder;
 
-            public Handler(IDblDipDbContext context, ITokenProvider tokenProvider, IPasswordHasher passwordHasher, ITokenBuilder tokenBuilder)
+            public Handler(IDblDipDbContext context, IPasswordHasher passwordHasher, ITokenBuilder tokenBuilder)
             {
                 _context = context;
-                _tokenProvider = tokenProvider;
+
                 _passwordHasher = passwordHasher;
                 _tokenBuilder = tokenBuilder;
             }
