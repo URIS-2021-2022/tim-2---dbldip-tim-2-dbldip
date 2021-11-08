@@ -20,7 +20,7 @@ namespace DblDip.Testing
 
             var correlationIdAccessor = new TestCorrelationIdAccessor(Guid.NewGuid());
 
-            var eventStore = new EventStore(options, dateTime, correlationIdAccessor, Mock.Of<IMediator>());
+            var eventStore = new EventStore(options, correlationIdAccessor, Mock.Of<IMediator>());
 
             return eventStore;
         }

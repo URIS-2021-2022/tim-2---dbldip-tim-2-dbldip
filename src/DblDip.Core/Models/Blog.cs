@@ -39,7 +39,7 @@ namespace DblDip.Core.Models
             Deleted = blogRemoved.Deleted;
         }
 
-        public void When(BlogUpdated blogUpdated)
+        public static void When(BlogUpdated blogUpdated)
         {
 
         }

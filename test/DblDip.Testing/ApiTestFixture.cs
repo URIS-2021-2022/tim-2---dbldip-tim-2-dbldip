@@ -79,7 +79,7 @@ namespace DblDip.Testing
 
                     var dateTime = new MachineDateTime();
 
-                    _store = new EventStore(options, dateTime, new TestCorrelationIdAccessor(_correlationId), MediatorBuilder.WithDefaults());
+                    _store = new EventStore(options, new TestCorrelationIdAccessor(_correlationId), MediatorBuilder.WithDefaults());
 
                     var context = new DblDipDbContext(contextOptions);
 
@@ -144,7 +144,7 @@ namespace DblDip.Testing
                 .UseSqlServer(_configuration[DataDefaultConnectionString])
                 .Options;
 
-            var context = new EventStore(options, default, new TestCorrelationIdAccessor(_correlationId), default);
+            var context = new EventStore(options, new TestCorrelationIdAccessor(_correlationId), default);
 
             foreach (var storedEvent in context.StoredEvents.Where(x => x.CorrelationId == _correlationId))
             {

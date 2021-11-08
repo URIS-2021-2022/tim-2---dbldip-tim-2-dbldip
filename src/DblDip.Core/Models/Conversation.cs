@@ -12,13 +12,18 @@ namespace DblDip.Core.Models
 
         private List<Guid> _messageIds;
         public Guid ConversationId { get; private set; }
-        public List<Guid> ProfileIds => _profileIds.ToList();
         public List<Guid> MessageIds => _messageIds.ToList();
         public DateTime? Deleted { get; private set; }
         public Conversation()
         {
             Apply(new ConversationCreated(Guid.NewGuid()));
         }
+
+        public List<Guid> ProfileIds()
+        {
+            return _profileIds.ToList();
+        }
+
         protected override void When(dynamic @event) => When(@event);
 
         public void When(ConversationUpdated conversationUpdated)

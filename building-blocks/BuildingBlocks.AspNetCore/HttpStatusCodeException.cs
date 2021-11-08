@@ -5,11 +5,13 @@ using System;
 
 namespace BuildingBlocks.AspNetCore
 {
+    [Serializable]
     public class HttpStatusCodeException : Exception
     {
+        
         public int StatusCode { get; set; }
         public string ContentType { get; set; } = @"text/plain";
-
+        
         public HttpStatusCodeException(int statusCode)
         {
             this.StatusCode = statusCode;

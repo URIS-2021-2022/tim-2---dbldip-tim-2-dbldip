@@ -44,36 +44,10 @@ namespace DblDip.Data
                     if (role.DomainEvents.Any())
                     {
                         store.Add(role);
-                        store.SaveChangesAsync(default).GetAwaiter().GetResult();
+                        if (store.SaveChangesAsync(default).GetAwaiter().IsCompleted)
+                            store.SaveChangesAsync(default).GetAwaiter().GetResult();
                     }
                 }
-            }
-        }
-
-        internal class RateConfiguration
-        {
-            public static void Seed(IEventStore store)
-            {
-                SeedRate(nameof(PhotographyRate), Price.Create(100).Value, PhotographyRate);
-
-                SeedRate(nameof(TravelRate), Price.Create(60).Value, TravelRate);
-
-                SeedRate(nameof(ConsulationRate), Price.Create(60).Value, ConsulationRate);
-
-                void SeedRate(string name, Price price, Guid id)
-                {
-                    var rate = store.FindAsync<Rate>(id).GetAwaiter().GetResult();
-
-                    rate ??= new Rate(name, price, id);
-
-                    if (rate.DomainEvents.Count > 0)
-                    {
-                        store.Add(rate);
-
-                        store.SaveChangesAsync(default).GetAwaiter().GetResult();
-                    }
-                }
-
             }
         }
 
@@ -101,7 +75,7 @@ namespace DblDip.Data
             {
                 var username = (Email)"quinntynebrown@gmail.com";
 
-                var user = context.Users.FirstOrDefault(x => x.Username ==username);
+                var user = context.Users.FirstOrDefault(x => x.Username == username);
 
                 if (user == null)
                 {
