@@ -44,7 +44,8 @@ namespace DblDip.Data
                     if (role.DomainEvents.Any())
                     {
                         store.Add(role);
-                        store.SaveChangesAsync(default).GetAwaiter().GetResult();
+                        if (store.SaveChangesAsync(default).GetAwaiter().IsCompleted)
+                            store.SaveChangesAsync(default).GetAwaiter().GetResult();
                     }
                 }
             }
@@ -74,7 +75,7 @@ namespace DblDip.Data
             {
                 var username = (Email)"quinntynebrown@gmail.com";
 
-                var user = context.Users.FirstOrDefault(x => x.Username ==username);
+                var user = context.Users.FirstOrDefault(x => x.Username == username);
 
                 if (user == null)
                 {
