@@ -16,7 +16,7 @@ namespace DblDip.Domain.Features
 
         public class Handler : IRequestHandler<Request, Response>
         {
-            
+            private IDblDipDbContext _context;
 
             public Handler(IDblDipDbContext context)
             {

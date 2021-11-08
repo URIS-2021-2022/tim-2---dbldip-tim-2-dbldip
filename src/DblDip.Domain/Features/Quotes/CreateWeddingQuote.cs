@@ -38,13 +38,11 @@ namespace DblDip.Domain.Features
         public class Handler : IRequestHandler<Request, Response>
         {
             private readonly IEventStore _store;
-            private readonly IDateTime _dateTime;
             private readonly IMediator _mediator;
 
-            public Handler(IEventStore store, IDateTime dateTime, IMediator mediator)
+            public Handler(IEventStore store, IMediator mediator)
             {
                 _store = store;
-                _dateTime = dateTime;
                 _mediator = mediator;
             }
 
