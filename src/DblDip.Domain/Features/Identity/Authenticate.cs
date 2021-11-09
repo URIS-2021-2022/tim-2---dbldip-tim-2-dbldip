@@ -57,7 +57,7 @@ namespace DblDip.Domain.Features
                                                  User = u,
                                                  Role = r,
                                                  Account = a
-                                             }).ToListAsync();
+                                             }).ToListAsync(cancellationToken);
 
                 var user = userAccountRoles.FirstOrDefault().User;
 

@@ -22,7 +22,7 @@ namespace DblDip.Core.Models
             ClientId = clientCreated.ClientId;
         }
 
-        public void When(ClientUpdated clientUpdated)
+        public static void When(ClientUpdated clientUpdated)
         {
 
         }

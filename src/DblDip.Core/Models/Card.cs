@@ -32,7 +32,7 @@ namespace DblDip.Core.Models
             Deleted = cardRemoved.Deleted;
         }
 
-        public void When(CardUpdated cardUpdated)
+        public static void When(CardUpdated cardUpdated)
         {
 
         }

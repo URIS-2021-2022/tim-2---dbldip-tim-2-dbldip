@@ -40,7 +40,7 @@ namespace DblDip.Domain.Features
 
                 var count = (await _context.Blogs.Include(x => x.Posts).SingleAsync(x => x.BlogId == request.BlogId)).Posts.Count();
 
-                var posts = await query.Skip(request.PageSize * (request.Page - 1)).Take(request.PageSize).Select(x => x.ToDto()).ToListAsync();
+                var posts = await query.Skip(request.PageSize * (request.Page - 1)).Take(request.PageSize).Select(x => x.ToDto()).ToListAsync(cancellationToken);
 
                 return new Response() { 
                     BlogPage = new()

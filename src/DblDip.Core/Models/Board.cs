@@ -29,7 +29,7 @@ namespace DblDip.Core.Models
             Name = boardCreated.Name;
         }
 
-        public void When(BoardUpdated boardUpdated)
+        public static void When(BoardUpdated boardUpdated)
         {
 
         }
@@ -44,7 +44,7 @@ namespace DblDip.Core.Models
 
         }
 
-        public void Update()
+        public static void Update()
         {
 
         }

@@ -16,8 +16,6 @@ namespace BuildingBlocks.Caching
             return (TResponse)cached;
         }
 
-        void Add(object objectToCache, string key);
-
         T Get<T>(string key);
 
         object Get(string key);
@@ -25,6 +23,7 @@ namespace BuildingBlocks.Caching
         void Add<T>(object objectToCache, string key);
 
         void Add<T>(object objectToCache, string key, double cacheDuration);
+        void Add(object objectToCache, string key);
 
         void Remove(string key);
 

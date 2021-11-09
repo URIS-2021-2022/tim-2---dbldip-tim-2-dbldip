@@ -26,7 +26,7 @@ namespace DblDip.Core.Models
             Deleted = brandRemoved.Deleted;
         }
 
-        public void When(BrandUpdated brandUpdated)
+        public static void When(BrandUpdated brandUpdated)
         {
 
         }
