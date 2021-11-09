@@ -20,17 +20,6 @@ namespace BuildingBlocks.Core
             return (await responseMessage.Content.ReadAsStringAsync()).FromJson<TResult>();
         }
 
-
-        public static async Task<HttpResponseMessage> PostAsync(this HttpClient client, string url, dynamic content, string oauth2Header = null)
-        {
-            if (!string.IsNullOrEmpty(oauth2Header))
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", oauth2Header.Split(' ')[1]);
-
-            var stringContent = new StringContent(JsonConvert.SerializeObject(content), Encoding.UTF8, "application/json");
-
-            return await client.PostAsync(url, stringContent);
-        }
-
         public static async Task<TOut> PostAsAsync<TIn, TOut>(this HttpClient client, string url, TIn content, string oauth2Header = null)
         {
             if (!string.IsNullOrEmpty(oauth2Header))
@@ -44,6 +33,19 @@ namespace BuildingBlocks.Core
 
             return JsonConvert.DeserializeObject<TOut>(responseText);
         }
+
+
+        public static async Task<HttpResponseMessage> PostAsync(this HttpClient client, string url, dynamic content, string oauth2Header = null)
+        {
+            if (!string.IsNullOrEmpty(oauth2Header))
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", oauth2Header.Split(' ')[1]);
+
+            var stringContent = new StringContent(JsonConvert.SerializeObject(content), Encoding.UTF8, "application/json");
+
+            return await client.PostAsync(url, stringContent);
+        }
+
+        
 
         public static async Task<TOut> PutAsAsync<TIn, TOut>(this HttpClient client, string url, TIn content, string oauth2Header = null)
         {

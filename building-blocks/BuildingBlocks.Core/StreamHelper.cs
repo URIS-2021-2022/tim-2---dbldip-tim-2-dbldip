@@ -2,7 +2,7 @@ using System;
 
 namespace BuildingBlocks.Core
 {
-    public class StreamHelper
+    public static class StreamHelper
     {
         public static byte[] ReadToEnd(System.IO.Stream stream)
         {

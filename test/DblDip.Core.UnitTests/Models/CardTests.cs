@@ -17,6 +17,7 @@ namespace DblDip.Core.UnitTests
 
         }
 
+        [Fact]
         public void Setup()
         {
 
