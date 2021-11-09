@@ -14,7 +14,10 @@ namespace DblDip.Core.Models
         private IEnumerable<TicketReference> _ticketReferences;
         public List<TicketReference> TicketReferences => _ticketReferences.ToList();
         private List<StoryReference> _storyReferences;
-        public List<StoryReference> StoryReferences => _storyReferences.ToList();
+        public List<StoryReference> StoryReferences()
+        {
+            return _storyReferences.ToList();
+        }
         public DateTime? Deleted { get; private set; }
         public Epic()
         {
@@ -46,7 +49,7 @@ namespace DblDip.Core.Models
 
         public void Update()
         {
-
+            throw new NotSupportedException();
         }
 
         public void Remove(DateTime deleted)

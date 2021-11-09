@@ -21,7 +21,7 @@ namespace DblDip.Core.Models
 
         public void When(QuestionnaireUpdated questionnaireUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(QuestionnaireRemoved questionnaireRemoved)

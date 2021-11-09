@@ -27,7 +27,7 @@ namespace DblDip.Core.Models
 
         public void Update()
         {
-
+            throw new NotSupportedException();
         }
     }
 }

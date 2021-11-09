@@ -18,7 +18,7 @@ namespace BuildingBlocks.Core
 
     public class TokenProvider : ITokenProvider
     {
-        private IConfiguration _configuration;
+        private readonly IConfiguration _configuration;
         public TokenProvider(IConfiguration configuration)
             => _configuration = configuration;
 

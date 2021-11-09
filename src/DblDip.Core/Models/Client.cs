@@ -24,7 +24,7 @@ namespace DblDip.Core.Models
 
         public void When(ClientUpdated clientUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

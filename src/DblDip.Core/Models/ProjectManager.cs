@@ -23,7 +23,7 @@ namespace DblDip.Core.Models
 
         public void When(ProjectManagerCreated projectManagerCreated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(ProjectManagerUpdated projectManagerUpdated)
@@ -33,7 +33,7 @@ namespace DblDip.Core.Models
 
         protected override void EnsureValidState()
         {
-
+            throw new NotSupportedException();
         }
 
         public void Update()

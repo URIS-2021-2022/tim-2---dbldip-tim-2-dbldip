@@ -37,7 +37,7 @@ namespace BuildingBlocks.EventStore
 
             var streamId = new Guid($"{keyValues[0]}");
 
-            var events = StoredEvents.Where(x => x.StreamId == streamId).OrderBy(x => x.CreatedOn).ToList()
+            var events = StoredEvents.Where(x => x.StreamId == streamId).OrderBy(x => x.CreatedOn)
                     .Select(x => DeserializeObject(x.Data, Type.GetType(x.DotNetType)) as IEvent);
 
             if (!events.Any())

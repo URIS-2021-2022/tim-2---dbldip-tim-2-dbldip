@@ -21,7 +21,7 @@ namespace DblDip.Data
             DashboardConfiguration.Seed(context, store);
         }
 
-        internal class RoleConfiguration
+        internal static class RoleConfiguration
         {
             public static void Seed(IEventStore store)
             {
@@ -126,7 +126,7 @@ namespace DblDip.Data
             }
         }
 
-        internal class DashboardConfiguration
+        internal static class DashboardConfiguration
         {
             public static void Seed(IDblDipDbContext context, IEventStore store)
             {
@@ -151,6 +151,7 @@ namespace DblDip.Data
         {
             public static void Seed(IEventStore store, IConfiguration configuration)
             {
+                throw new NotSupportedException();
             }
         }
     }

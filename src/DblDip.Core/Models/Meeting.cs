@@ -26,7 +26,7 @@ namespace DblDip.Core.Models
 
         public void When(MeetingUpdated meetingUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(MeetingRemoved meetingRemoved)
