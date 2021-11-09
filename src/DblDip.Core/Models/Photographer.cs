@@ -36,7 +36,7 @@ namespace DblDip.Core.Models
 
         public void When(PhotographerUpdated photographerUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

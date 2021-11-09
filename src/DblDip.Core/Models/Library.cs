@@ -25,7 +25,7 @@ namespace DblDip.Core.Models
 
         public void When(LibraryUpdated libraryUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(LibraryRemoved libraryRemoved)

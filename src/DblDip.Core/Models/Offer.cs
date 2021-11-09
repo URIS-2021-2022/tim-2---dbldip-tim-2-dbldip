@@ -35,7 +35,7 @@ namespace DblDip.Core.Models
 
         public void When(OfferUpdated offerUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

@@ -31,7 +31,7 @@ namespace DblDip.Core.Models
 
         public void When(RateUpdated rateUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(RateRemoved rateRemoved)

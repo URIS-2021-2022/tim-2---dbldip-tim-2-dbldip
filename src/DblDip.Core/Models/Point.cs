@@ -21,7 +21,7 @@ namespace DblDip.Core.Models
 
         public void When(PointUpdated pointUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(PointRemoved pointRemoved)

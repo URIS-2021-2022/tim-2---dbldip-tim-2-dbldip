@@ -17,7 +17,7 @@ namespace DblDip.Core.Models
 
         public void When(ParticipantUpdated participantUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(ParticipantCreated participantCreated)
