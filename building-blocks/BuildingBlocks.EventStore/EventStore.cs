@@ -56,7 +56,7 @@ namespace BuildingBlocks.EventStore
         {
             foreach (var aggregateRoot in _trackedAggregates)
             {
-                var type = aggregateRoot.GetType();
+               
 
                 var storedEvents = aggregateRoot.DomainEvents
                     .Select(@event =>
@@ -79,7 +79,7 @@ namespace BuildingBlocks.EventStore
                         return storedEvent;
                     });
 
-                await _meditator?.Publish(new EventStoreChanged { Events = storedEvents });
+                await _meditator?.Publish(new EventStoreChanged { Events = storedEvents }, cancellationToken);
 
                 StoredEvents.AddRange(storedEvents);
             }
