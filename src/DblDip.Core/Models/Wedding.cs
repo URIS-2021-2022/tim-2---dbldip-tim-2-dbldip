@@ -75,6 +75,7 @@ namespace DblDip.Core.Models
                 if (Parts.Any(x => (x.Scheduled.Overlap(part.Scheduled) && x != part)))
                 {
                     throw new Exception("Model Invalid. Parts overlap");
+                    //nole resio ovo
                 }
             }
         }
