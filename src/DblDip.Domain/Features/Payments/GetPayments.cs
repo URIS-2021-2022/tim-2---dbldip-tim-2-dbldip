@@ -26,6 +26,7 @@ namespace DblDip.Domain.Features
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
+                await System.Threading.Tasks.Task.Delay(2000, cancellationToken);
                 return new Response()
                 {
                     Payments = _context.Set<Payment>().Select(x => x.ToDto()).ToList()

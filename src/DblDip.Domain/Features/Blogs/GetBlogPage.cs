@@ -45,7 +45,7 @@ namespace DblDip.Domain.Features
                 return new Response() { 
                     BlogPage = new()
                     {
-                        TotalPages = ((int)(count / request.PageSize)) + ((count % request.PageSize) > 0 ? 1 : 0),
+                        TotalPages = ((count / request.PageSize)) + ((count % request.PageSize) > 0 ? 1 : 0),
                         CurrentPage = request.Page,                        
                         TotalResults = count,
                         Posts = posts 
