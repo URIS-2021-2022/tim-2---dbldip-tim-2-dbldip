@@ -22,7 +22,7 @@ namespace DblDip.Core.Models
         }
         public void When(DomainEvents.YouTubeVideoCreated youTubeVideoCreated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(YouTubeVideoRemoved youTubeVideoRemoved)
@@ -32,7 +32,7 @@ namespace DblDip.Core.Models
 
         public void When(YouTubeVideoUpdated youTubeVideoUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()
@@ -48,7 +48,7 @@ namespace DblDip.Core.Models
 
         public void Update()
         {
-
+            throw new NotSupportedException();
         }
     }
 }

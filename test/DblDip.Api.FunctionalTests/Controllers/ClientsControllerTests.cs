@@ -44,7 +44,7 @@ namespace DblDip.Api.FunctionalTests
                 Assert.NotEqual(default, response.Client.ClientId);
             } catch (Exception e)
             {
-                throw e;
+                throw;
             }
         }
 

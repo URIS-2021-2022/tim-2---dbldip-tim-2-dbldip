@@ -15,7 +15,7 @@ namespace DblDip.Domain.Features
             public Validator()
             {
                 RuleFor(x => x.ClientId).NotNull();
-                RuleFor(x => x.ClientId).NotEqual(new Guid.NewGuid());
+                RuleFor(x => x.ClientId).NotEqual(new Guid());
             }
         }
 

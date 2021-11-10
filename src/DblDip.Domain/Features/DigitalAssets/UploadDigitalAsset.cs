@@ -52,7 +52,7 @@ namespace DblDip.Domain.Features
 
                 var reader = new MultipartReader(boundary, httpContext.Request.Body);
 
-                var section = await reader.ReadNextSectionAsync();
+                var section = await reader.ReadNextSectionAsync(cancellationToken);
 
                 while (section != null)
                 {
