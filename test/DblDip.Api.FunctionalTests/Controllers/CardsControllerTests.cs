@@ -85,6 +85,8 @@ namespace DblDip.Api.FunctionalTests
 
             var sut = await context.FindAsync<Card>(card.CardId);
 
+            Assert.NotNull(sut);
+
         }
 
         [Fact]
