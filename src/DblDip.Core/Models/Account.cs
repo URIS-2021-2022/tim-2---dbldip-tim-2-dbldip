@@ -43,9 +43,9 @@ namespace DblDip.Core.Models
             Deleted = accountRemoved.Deleted;
         }
 
-        public void When(AccountUpdated accountUpdated)
+        public static void When(AccountUpdated accountUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(SetDefaultProfile setDefaultProfile)

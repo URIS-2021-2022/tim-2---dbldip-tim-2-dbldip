@@ -7,7 +7,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using DblDip.Core.ValueObjects;
 using DblDip.Domain.IntegrationEvents;
-using BuildingBlocks.EventStore;
 
 namespace DblDip.Domain.Features
 {
