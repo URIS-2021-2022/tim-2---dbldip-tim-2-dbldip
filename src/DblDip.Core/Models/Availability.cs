@@ -28,7 +28,7 @@ namespace DblDip.Core.Models
 
         public void When(AvailabilityUpdated availabilityUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

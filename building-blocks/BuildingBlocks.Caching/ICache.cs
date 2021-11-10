@@ -5,17 +5,7 @@ namespace BuildingBlocks.Caching
 {
     public interface ICache
     {
-        public virtual TResponse FromCacheOrService<TResponse>(Func<TResponse> action, string key)
-        {
-            var cached = Get(key);
-            if (cached == null)
-            {
-                cached = action();
-                Add(cached, key);
-            }
-            return (TResponse)cached;
-        }
-
+        
         void Add(object objectToCache, string key);
 
         void Add<T>(object objectToCache, string key);
@@ -31,6 +21,17 @@ namespace BuildingBlocks.Caching
         void ClearAll();
 
         bool Exists(string key);
+
+        public virtual TResponse FromCacheOrService<TResponse>(Func<TResponse> action, string key)
+        {
+            var cached = Get(key);
+            if (cached == null)
+            {
+                cached = action();
+                Add(cached, key);
+            }
+            return (TResponse)cached;
+        }
 
         public virtual TResponse FromCacheOrService<TResponse>(Func<TResponse> action, string key, double cacheDuration)
         {

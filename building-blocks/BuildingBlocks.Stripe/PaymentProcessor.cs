@@ -2,6 +2,7 @@
 using Stripe;
 using System;
 using System.Net;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 namespace BuildingBlocks.Stripe
@@ -12,6 +13,7 @@ namespace BuildingBlocks.Stripe
         Task<bool> ProcessAsync(StripePaymentDto payment);
     }
 
+    [Serializable]
     public class PaymentException : HttpStatusCodeException
     {
         public PaymentException(string detail)
@@ -23,6 +25,7 @@ namespace BuildingBlocks.Stripe
 
     public class PaymentProcessor : IPaymentProcessor
     {
+
         public async Task<bool> ProcessAsync(StripePaymentDto payment)
         {
             try
