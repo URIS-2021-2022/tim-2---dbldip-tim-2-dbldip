@@ -40,7 +40,7 @@ namespace DblDip.Domain.Features
 
                 var board = await _store.FindAsync<Board>(request.Board.BoardId);
 
-                board.Update();
+                Board.Update();
 
                 _store.Add(board);
 

@@ -28,7 +28,7 @@ namespace DblDip.Core.Models
 
         public static void When(BrandUpdated brandUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()
