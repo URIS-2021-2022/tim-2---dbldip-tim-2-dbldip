@@ -30,9 +30,9 @@ namespace DblDip.Core.Models
             MessageId = messageCreated.MessageId;
         }
 
-        public void When(MessageUpdated messageUpdated)
+        public static void When(MessageUpdated messageUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

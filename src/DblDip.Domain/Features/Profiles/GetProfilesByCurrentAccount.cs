@@ -38,7 +38,7 @@ namespace DblDip.Domain.Features.Profiles
                                       
                                       where account.AccountId == accountId
                                       
-                                      select profile.ToDto()).ToListAsync();
+                                      select profile.ToDto()).ToListAsync(cancellationToken: cancellationToken);
 
                 return new(profiles);
             }

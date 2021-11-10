@@ -40,7 +40,7 @@ namespace DblDip.Domain.Features
 
                 var library = await _store.FindAsync<Library>(request.Library.LibraryId);
 
-                library.Update();
+                Library.Update();
 
                 _store.Add(library);
 

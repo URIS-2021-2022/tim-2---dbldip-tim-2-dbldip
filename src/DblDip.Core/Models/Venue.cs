@@ -24,7 +24,7 @@ namespace DblDip.Core.Models
 
         public void When(VenueUpdated venueUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

@@ -50,7 +50,7 @@ namespace DblDip.Domain.Features
 
                 await _store.SaveChangesAsync(cancellationToken);
 
-                await _mediator.Publish(new ProfileCreated(photographer));
+                await _mediator.Publish(new ProfileCreated(photographer), cancellationToken);
 
                 return new Response()
                 {
