@@ -46,7 +46,7 @@ namespace DblDip.Domain.Features
                                       join profileReference in _context.Accounts.SelectMany(x => x.Profiles) on true equals true
                                       join profile in _context.Profiles on profileReference.ProfileId equals profile.ProfileId
                                       where account.AccountId == accountId
-                                      select profile.ToDto()).ToListAsync();
+                                      select profile.ToDto()).ToListAsync(cancellationToken: cancellationToken);
 
                 return new (profiles);
             }

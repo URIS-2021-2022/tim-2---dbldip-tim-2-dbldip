@@ -84,6 +84,8 @@ namespace DblDip.Api.FunctionalTests
 
             var sut = await context.FindAsync<Availability>(availability.AvailabilityId);
 
+            Assert.NotNull(sut);
+
         }
 
         [Fact]
@@ -104,6 +106,7 @@ namespace DblDip.Api.FunctionalTests
             var response = JsonConvert.DeserializeObject<GetAvailabilities.Response>(await httpResponseMessage.Content.ReadAsStringAsync());
 
             Assert.True(response.Availabilities.Any());
+           
         }
 
         [Fact]

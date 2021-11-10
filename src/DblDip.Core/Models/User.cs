@@ -34,7 +34,7 @@ namespace DblDip.Core.Models
 
             passwordHasher = new PasswordHasher();
 
-            if (usernameAvailabilityCheck != null && usernameAvailabilityCheck.IsAvailable(username) == false)
+            if (usernameAvailabilityCheck != null && !usernameAvailabilityCheck.IsAvailable(username) )
                 throw new DomainException("Email not available");
 
             var salt = new byte[128 / 8];

@@ -52,7 +52,7 @@ namespace DblDip.Domain.Features
 
                 await _store.SaveChangesAsync(cancellationToken);
 
-                return new(); ;
+                return new();
             }
         }
     }
