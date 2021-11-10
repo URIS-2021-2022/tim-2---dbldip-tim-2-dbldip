@@ -33,12 +33,12 @@ namespace DblDip.Domain.Features
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken) {
 
                 var query = from b in _context.Blogs
-                            join a in _context.Blogs.SelectMany(x => x.Posts) on true equals true
+                            join a in _context.Blogs.SelectMany(x => x.Posts()) on true equals true
                             join p in _context.Posts on a.PostId equals p.PostId
                             where b.BlogId == request.BlogId && !p.Deleted.HasValue
                             select p;
 
-                var count = (await _context.Blogs.Include(x => x.Posts).SingleAsync(x => x.BlogId == request.BlogId)).Posts.Count();
+                var count = (await _context.Blogs.Include(x => x.Posts()).SingleAsync(x => x.BlogId == request.BlogId)).Posts().Count();
 
                 var posts = await query.Skip(request.PageSize * (request.Page - 1)).Take(request.PageSize).Select(x => x.ToDto()).ToListAsync();
 
