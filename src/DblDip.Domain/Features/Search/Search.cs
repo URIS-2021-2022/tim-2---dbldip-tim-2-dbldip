@@ -16,13 +16,17 @@ namespace DblDip.Domain.Features
 
         public class Handler : IRequestHandler<Request, Response>
         {
-            private IDblDipDbContext _context;
+            private readonly IDblDipDbContext _context;
 
             public Handler(IDblDipDbContext context)
             {
                 _context = context;
             }
 
+            public IDblDipDbContext GetContext()
+            {
+                return _context;
+            }
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
 
