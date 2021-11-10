@@ -19,9 +19,9 @@ namespace DblDip.Testing.Builders
             throw new NotImplementedException();
         }
 
-        public PhotographyRateBuilder(Rate _rate)
+        public PhotographyRateBuilder(Rate rate)
         {
-            _photographyRate = _rate;
+            _photographyRate = rate;
         }
 
         public Rate Build()
