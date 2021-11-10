@@ -57,7 +57,7 @@ namespace DblDip.Domain.Features
 
                 await _store.SaveChangesAsync(default);
 
-                await _mediator.Publish(new QuoteCreated(quote));
+                await _mediator.Publish(new QuoteCreated(quote), cancellationToken);
 
                 return new Response()
                 {

@@ -1,10 +1,10 @@
 using Newtonsoft.Json;
 using DblDip.Core.Models;
 using DblDip.Domain.Features;
-using DblDip.Domain.Features;
+
 using DblDip.Testing;
 using DblDip.Testing.Builders;
-using DblDip.Testing.Builders;
+
 using System;
 using System.Linq;
 using System.Net.Http;

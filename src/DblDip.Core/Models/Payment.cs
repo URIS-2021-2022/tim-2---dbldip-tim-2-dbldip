@@ -19,9 +19,9 @@ namespace DblDip.Core.Models
             PaymentId = paymentCreated.PaymentId;
         }
 
-        public void When(PaymentUpdated paymentUpdated)
+        public static void When(PaymentUpdated paymentUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(PaymentRemoved paymentRemoved)
