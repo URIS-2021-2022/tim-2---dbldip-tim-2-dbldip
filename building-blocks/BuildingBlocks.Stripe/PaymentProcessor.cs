@@ -22,7 +22,6 @@ namespace BuildingBlocks.Stripe
 
         }
     }
-
     public class PaymentProcessor : IPaymentProcessor
     {
 
