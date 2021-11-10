@@ -25,9 +25,9 @@ namespace DblDip.Core.Models
             Deleted = invoiceRemoved.Deleted;
         }
 
-        public void When(InvoiceUpdated invoiceUpdated)
+        public static void When(InvoiceUpdated invoiceUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

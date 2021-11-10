@@ -26,8 +26,10 @@ namespace DblDip.Api
 {
     public static class Dependencies
     {
+        private static readonly string path = "https://opensource.org/licenses/MIT";
         public static void Configure(IServiceCollection services, IConfiguration configuration)
         {
+           
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
@@ -44,7 +46,7 @@ namespace DblDip.Api
                     License = new OpenApiLicense
                     {
                         Name = "Use under MIT",
-                        Url = new Uri("https://opensource.org/licenses/MIT"),
+                        Url = new Uri(path)
                     }
                 });
 

@@ -77,7 +77,7 @@ namespace DblDip.Data
             }
         }
 
-        internal class CardConfiguration
+        internal static class CardConfiguration
         {
             public static void Seed(IEventStore store, IDblDipDbContext context)
             {
@@ -130,7 +130,6 @@ namespace DblDip.Data
         {
             public static void Seed(IDblDipDbContext context, IEventStore store)
             {
-               // var user = context.Users.Single(x => x.Username == "quinntynebrown@gmail.com");
 
                 var profile = context.Profiles.Single(x => x.Name == "Quinntyne");
 
