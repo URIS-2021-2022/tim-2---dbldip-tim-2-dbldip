@@ -31,7 +31,7 @@ namespace DblDip.Core.Models
 
         public void When(TimeEntryUpdated timeEntryUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

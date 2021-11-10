@@ -96,6 +96,8 @@ namespace DblDip.Api.FunctionalTests
 
             var sut = await context.FindAsync<Account>(account.AccountId);
 
+            Assert.NotNull(sut);
+
         }
 
         [Fact]
@@ -184,6 +186,8 @@ namespace DblDip.Api.FunctionalTests
             httpResponseMessage.EnsureSuccessStatusCode();
 
             var sut = await context.FindAsync<Account>(account.AccountId);
+
+            Assert.NotNull(sut);
 
         }
 

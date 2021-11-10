@@ -52,7 +52,7 @@ namespace DblDip.Domain.Features
 
                 await _store.SaveChangesAsync(cancellationToken);
 
-                await _mediator.Publish(new ProfileCreated(client));
+                await _mediator.Publish(new ProfileCreated(client), cancellationToken);
 
                 return new Response()
                 {
