@@ -7,7 +7,7 @@ namespace DblDip.Domain.Features
     {
         public static RoleDto ToDto(this Role role)
         {
-            return new RoleDto(role.RoleId, role.Name, role.Privileges());
+            return new RoleDto(role.RoleId, role.Name, role.Privileges);
         }
     }
 }
