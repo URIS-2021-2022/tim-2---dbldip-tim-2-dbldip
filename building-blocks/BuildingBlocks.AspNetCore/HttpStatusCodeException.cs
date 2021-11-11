@@ -12,10 +12,10 @@ namespace BuildingBlocks.AspNetCore
         
         public int StatusCode { get; set; }
         public string ContentType { get; set; } = @"text/plain";
-        
-        protected HttpStatusCodeException(SerializationInfo info, StreamingContext context)
+
+        protected HttpStatusCodeException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
-            
+
         }
 
         public HttpStatusCodeException(int statusCode)

@@ -28,7 +28,7 @@ namespace DblDip.Core.Models
 
         public static void When(ConversationUpdated conversationUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(ConversationCreated conversationCreated)

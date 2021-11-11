@@ -33,7 +33,7 @@ namespace DblDip.Core.Models
             Description = equipmentCreated.Description;
         }
 
-        public void When(EquipmentUpdated equipmentUpdated)
+        public static void When(EquipmentUpdated equipmentUpdated)
         {
   
         }
