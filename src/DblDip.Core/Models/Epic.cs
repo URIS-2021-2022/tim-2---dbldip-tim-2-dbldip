@@ -12,7 +12,10 @@ namespace DblDip.Core.Models
         public Guid AuthorId { get; private set; }
         public string Description { get; private set; }
         private IEnumerable<TicketReference> _ticketReferences;
-        public List<TicketReference> TicketReferences => _ticketReferences.ToList();
+        public List<TicketReference> TicketReferences()
+        {
+            return _ticketReferences.ToList();
+        }
         private List<StoryReference> _storyReferences;
         public List<StoryReference> StoryReferences()
         {
@@ -34,7 +37,8 @@ namespace DblDip.Core.Models
 
         public void When(EpicUpdated epicUpdated)
         {
-
+            //METHOD NOT IMPLEMENTED
+            throw new NotSupportedException();
         }
 
         public void When(EpicRemoved epicRemoved)

@@ -1,6 +1,5 @@
 using BuildingBlocks.EventStore;
 using BuildingBlocks.Core;
-using BuildingBlocks.EventStore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

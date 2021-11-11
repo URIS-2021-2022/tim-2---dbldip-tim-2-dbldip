@@ -37,9 +37,9 @@ namespace DblDip.Data
 
                 void AddRoleIfDoesntExists(IEventStore store, Guid roleId, string name)
                 {
-                    var role = store.FindAsync<Role>(roleId).GetAwaiter().GetResult();
 
-                    role ??= new Role(roleId, name);
+
+                    var role = store.FindAsync<Role>(roleId).GetAwaiter().IsCompleted ? store.FindAsync<Role>(roleId).GetAwaiter().GetResult() : new Role(roleId, name);
 
                     if (role.DomainEvents.Any())
                     {
@@ -69,7 +69,7 @@ namespace DblDip.Data
             }
         }
 
-        internal class UserConfiguration
+        internal static class UserConfiguration
         {
             public static void Seed(IDblDipDbContext context, IEventStore store)
             {
@@ -120,7 +120,7 @@ namespace DblDip.Data
             }
         }
 
-        internal class SystemLocationConfiguration
+        internal static class SystemLocationConfiguration
         {
             public static void Seed(IEventStore store, IConfiguration configuration)
             {
