@@ -84,6 +84,7 @@ namespace DblDip.Api.FunctionalTests
 
             var sut = await context.FindAsync<Meeting>(meeting.MeetingId);
 
+            Assert.NotNull(sut);
         }
 
         [Fact]

@@ -8,9 +8,9 @@ namespace DblDip.Core.Exceptions
     {
         public DomainException(string message) : base(message) { }
 
-        protected DomainException(SerializationInfo info, StreamingContext context)
+        protected DomainException(SerializationInfo info, StreamingContext context) :base(info,context)
         {
-            //
+            
         }
     }
 }

@@ -82,6 +82,7 @@ namespace DblDip.Api.FunctionalTests
 
             var sut = await context.FindAsync<Lead>(lead.LeadId);
 
+            Assert.NotNull(sut);
         }
 
         [Fact]

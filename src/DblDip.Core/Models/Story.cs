@@ -16,10 +16,15 @@ namespace DblDip.Core.Models
         public DateTime? Deleted { get; private set; }
         public DateTime? Completed { get; private set; }
         public string Description { get; private set; }
-        public List<TaskReference> TaskReferences => _taskReferences.ToList();
+       
         public string Notes { get; private set; }
 
         private List<TaskReference> _taskReferences;
+
+        public List<TaskReference> TaskReferences()
+        {
+            return _taskReferences.ToList();
+        }
         public Story()
         {
             Apply(new StoryCreated(Guid.NewGuid()));
@@ -34,7 +39,7 @@ namespace DblDip.Core.Models
 
         public void When(StoryUpdated storyUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(StoryRemoved storyRemoved)
@@ -59,7 +64,7 @@ namespace DblDip.Core.Models
 
         public void Update()
         {
-
+            throw new NotSupportedException();
         }
 
         public void Remove(DateTime deleted)

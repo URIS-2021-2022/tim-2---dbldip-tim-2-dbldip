@@ -64,10 +64,10 @@ namespace DblDip.Domain.Features
                 var account = userAccountRoles.First().Account;
 
                 if (user == null)
-                    throw new ArgumentNullException("user is null");
+                    throw new ArgumentNullException(user.ToString() + " , user is null");
 
                 if (!ValidateUser(user, _passwordHasher.HashPassword(user.Salt, request.Password)))
-                    throw new ArgumentNullException("user is not validated");
+                    throw new ArgumentNullException(user.ToString() + ", user is not validated");
 
 
                 foreach (var role in userAccountRoles.Select(x => x.Role))
