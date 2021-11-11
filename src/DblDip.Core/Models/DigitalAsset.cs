@@ -52,7 +52,10 @@ namespace DblDip.Core.Models
             var digitalAssets = new List<DigitalAsset>();
 
             if (!MultipartRequestHelper.IsMultipartContentType(httpContext.Request.ContentType))
-                throw new Exception($"Expected a multipart request, but got {httpContext.Request.ContentType}");
+            {
+                ArgumentNullException argumentNullException = new ArgumentNullException($"Expected a multipart request, but got {httpContext.Request.ContentType}");
+                throw argumentNullException;
+            }
 
             var mediaTypeHeaderValue = MediaTypeHeaderValue.Parse(httpContext.Request.ContentType);
 
