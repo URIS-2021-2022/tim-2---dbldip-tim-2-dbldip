@@ -51,7 +51,7 @@ namespace DblDip.Data
             }
         }
 
-        internal class CardConfiguration
+        internal static class CardConfiguration
         {
             public static void Seed(IEventStore store, IDblDipDbContext context)
             {
