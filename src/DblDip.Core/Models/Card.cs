@@ -32,9 +32,9 @@ namespace DblDip.Core.Models
             Deleted = cardRemoved.Deleted;
         }
 
-        public void When(CardUpdated cardUpdated)
+        public static void When(CardUpdated cardUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

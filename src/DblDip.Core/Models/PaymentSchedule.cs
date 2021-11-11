@@ -21,7 +21,7 @@ namespace DblDip.Core.Models
 
         public void When(PaymentScheduleUpdated paymentScheduleUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(PaymentScheduleRemoved paymentScheduleRemoved)

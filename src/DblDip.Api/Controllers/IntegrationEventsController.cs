@@ -16,17 +16,6 @@ namespace DblDip.Api.Controllers
             var response = Response;
             response.Headers.Add("Content-Type", "text/event-stream");
 
-            /*            _integrationEventService.Subscribe(async e =>
-                        {
-                            var @event = JsonConvert.SerializeObject(e);
-
-                            await response
-                            .WriteAsync($"data: {@event}\r\r");
-
-                            response.Body.Flush();
-
-                        });*/
-
             await tcs.Task;
 
         }

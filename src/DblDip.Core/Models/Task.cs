@@ -34,7 +34,7 @@ namespace DblDip.Core.Models
         public void When(TaskUpdated taskUpdated)
         {
             if (string.IsNullOrEmpty(Description) && string.IsNullOrEmpty(Name))
-                throw new Exception();
+                throw new ArgumentException("Description and name can not be null or empty!");
         }
 
 

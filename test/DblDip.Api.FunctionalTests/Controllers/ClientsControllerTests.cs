@@ -44,7 +44,7 @@ namespace DblDip.Api.FunctionalTests
                 Assert.NotEqual(default, response.Client.ClientId);
             } catch (Exception e)
             {
-                throw e;
+                throw;
             }
         }
 
@@ -88,6 +88,8 @@ namespace DblDip.Api.FunctionalTests
             httpResponseMessage.EnsureSuccessStatusCode();
 
             var sut = await context.FindAsync<Client>(client.ClientId);
+
+            Assert.NotNull(sut);
 
         }
 

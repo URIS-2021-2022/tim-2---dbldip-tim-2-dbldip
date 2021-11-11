@@ -1,6 +1,5 @@
 using BuildingBlocks.Core;
 using BuildingBlocks.EventStore;
-using BuildingBlocks.EventStore;
 using DblDip.Core.Models;
 using FluentValidation;
 using MediatR;

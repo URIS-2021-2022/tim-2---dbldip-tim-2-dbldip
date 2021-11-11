@@ -24,7 +24,7 @@ namespace DblDip.Core.Models
             Deleted = contactRemoved.Deleted;
         }
 
-        public void When(ContactUpdated contactUpdated)
+        public static void When(ContactUpdated contactUpdated)
         {
 
         }

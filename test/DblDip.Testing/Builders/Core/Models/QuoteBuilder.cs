@@ -21,6 +21,11 @@ namespace DblDip.Testing.Builders
 
         }
 
+        public QuoteBuilder(Quote quote)
+        {
+            _quote = quote;
+        }
+
         public Quote Build()
         {
             return _quote;

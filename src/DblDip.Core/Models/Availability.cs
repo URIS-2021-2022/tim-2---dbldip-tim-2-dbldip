@@ -26,9 +26,9 @@ namespace DblDip.Core.Models
             Deleted = availabilityRemoved.Deleted;
         }
 
-        public void When(AvailabilityUpdated availabilityUpdated)
+        public static void When(AvailabilityUpdated availabilityUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()
@@ -43,7 +43,7 @@ namespace DblDip.Core.Models
 
         public void Update()
         {
-
+            throw new NotSupportedException();
         }
     }
 }

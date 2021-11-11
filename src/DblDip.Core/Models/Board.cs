@@ -29,9 +29,9 @@ namespace DblDip.Core.Models
             Name = boardCreated.Name;
         }
 
-        public void When(BoardUpdated boardUpdated)
+        public static void When(BoardUpdated boardUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(BoardRemoved boardRemoved)

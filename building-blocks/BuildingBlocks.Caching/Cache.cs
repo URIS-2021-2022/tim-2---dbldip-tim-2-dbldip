@@ -24,18 +24,6 @@ namespace BuildingBlocks.Caching
             }
             return (TResponse)cached;
         }
-
-        public async Task<TResponse> FromCacheOrServiceAsync<TResponse>(Func<Task<TResponse>> action, string key, double cacheDuration)
-        {
-            var cached = Get(key);
-            if (cached == null)
-            {
-                cached = await action();
-                Add<TResponse>(cached, key, cacheDuration);
-            }
-            return (TResponse)cached;
-        }
-
         public virtual TResponse FromCacheOrService<TResponse>(Func<TResponse> action, string key)
         {
             var cached = Get(key);
@@ -46,6 +34,17 @@ namespace BuildingBlocks.Caching
             }
             return (TResponse)cached;
         }
+
+        public async Task<TResponse> FromCacheOrServiceAsync<TResponse>(Func<Task<TResponse>> action, string key, double cacheDuration)
+        {
+            var cached = Get(key);
+            if (cached == null)
+            {
+                cached = await action();
+                Add<TResponse>(cached, key, cacheDuration);
+            }
+            return (TResponse)cached;
+        }        
 
         public async Task<TResponse> FromCacheOrServiceAsync<TResponse>(Func<Task<TResponse>> action, string key)
         {

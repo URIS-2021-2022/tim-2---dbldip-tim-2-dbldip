@@ -25,7 +25,7 @@ namespace DblDip.Core.Models
 
         public void When(OrderCheckedOut orderCheckedOut)
         {
-
+            throw new NotSupportedException();
         }
 
         public static void When(OrderPaid paid)

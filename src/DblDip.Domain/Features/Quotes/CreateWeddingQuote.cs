@@ -1,6 +1,5 @@
 using BuildingBlocks.Core;
 using BuildingBlocks.EventStore;
-using BuildingBlocks.EventStore;
 using FluentValidation;
 using MediatR;
 using DblDip.Core.Models;
@@ -38,13 +37,11 @@ namespace DblDip.Domain.Features
         public class Handler : IRequestHandler<Request, Response>
         {
             private readonly IEventStore _store;
-            private readonly IDateTime _dateTime;
             private readonly IMediator _mediator;
 
-            public Handler(IEventStore store, IDateTime dateTime, IMediator mediator)
+            public Handler(IEventStore store, IMediator mediator)
             {
                 _store = store;
-                _dateTime = dateTime;
                 _mediator = mediator;
             }
 
@@ -60,7 +57,7 @@ namespace DblDip.Domain.Features
 
                 await _store.SaveChangesAsync(default);
 
-                await _mediator.Publish(new QuoteCreated(quote));
+                await _mediator.Publish(new QuoteCreated(quote), cancellationToken);
 
                 return new Response()
                 {

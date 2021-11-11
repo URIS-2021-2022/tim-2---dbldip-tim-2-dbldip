@@ -1,12 +1,10 @@
 using BuildingBlocks.EventStore;
-using BuildingBlocks.EventStore;
 using DblDip.Core.Models;
 using FluentValidation;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 using System;
-using BuildingBlocks.EventStore;
 
 namespace DblDip.Domain.Features
 {

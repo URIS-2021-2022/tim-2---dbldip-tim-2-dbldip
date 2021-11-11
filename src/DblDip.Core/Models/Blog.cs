@@ -14,7 +14,10 @@ namespace DblDip.Core.Models
         public string Name { get; private set; }
         public Email AuthorEmail { get; private set; }
         public DateTime? Deleted { get; private set; }
-        public List<PostReference> Posts => _posts.ToList();
+        public List<PostReference> Posts()
+        {
+            return _posts.ToList();
+        }
 
         public Blog()
         {
@@ -39,9 +42,9 @@ namespace DblDip.Core.Models
             Deleted = blogRemoved.Deleted;
         }
 
-        public void When(BlogUpdated blogUpdated)
+        public static void When(BlogUpdated blogUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

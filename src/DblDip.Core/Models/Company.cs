@@ -29,7 +29,8 @@ namespace DblDip.Core.Models
 
         public void When(CompanyUpdated companyUpdated)
         {
-
+            //METHOD NOT SUPPORTED
+            throw new NotSupportedException();
         }
 
         public void When(CompanyLogoChanged companyLogoChanged)

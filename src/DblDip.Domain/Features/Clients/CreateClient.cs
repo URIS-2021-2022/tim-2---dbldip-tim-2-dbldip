@@ -7,7 +7,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using DblDip.Core.ValueObjects;
 using DblDip.Domain.IntegrationEvents;
-using BuildingBlocks.EventStore;
 
 namespace DblDip.Domain.Features
 {
@@ -53,7 +52,7 @@ namespace DblDip.Domain.Features
 
                 await _store.SaveChangesAsync(cancellationToken);
 
-                await _mediator.Publish(new ProfileCreated(client));
+                await _mediator.Publish(new ProfileCreated(client), cancellationToken);
 
                 return new Response()
                 {

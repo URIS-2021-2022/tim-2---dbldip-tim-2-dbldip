@@ -21,7 +21,7 @@ namespace DblDip.Core.Models
 
         public void When(ReferralUpdated referralUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(ReferralRemoved referralRemoved)

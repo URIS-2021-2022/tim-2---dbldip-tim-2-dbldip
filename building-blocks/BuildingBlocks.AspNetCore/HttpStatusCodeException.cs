@@ -2,13 +2,21 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Runtime.Serialization;
 
 namespace BuildingBlocks.AspNetCore
 {
+    [Serializable]
     public class HttpStatusCodeException : Exception
     {
+        
         public int StatusCode { get; set; }
         public string ContentType { get; set; } = @"text/plain";
+        
+        protected HttpStatusCodeException(SerializationInfo info, StreamingContext context)
+        {
+            
+        }
 
         public HttpStatusCodeException(int statusCode)
         {

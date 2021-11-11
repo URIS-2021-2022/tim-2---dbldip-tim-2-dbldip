@@ -23,9 +23,13 @@ namespace DblDip.Domain.Features
                 _context = context;
             }
 
+            public IDblDipDbContext GetContext()
+            {
+                return _context;
+            }
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-
+                await System.Threading.Tasks.Task.Delay(2000, cancellationToken);
                 return new Response(null);
             }
         }

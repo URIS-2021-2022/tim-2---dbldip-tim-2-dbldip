@@ -47,7 +47,7 @@ namespace DblDip.Domain.Features
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken) {
 
-                var claimsPrincipal = _httpContextAccessor.HttpContext.User as ClaimsPrincipal;
+                var claimsPrincipal = _httpContextAccessor.HttpContext.User;
 
                 var accountId = new Guid(claimsPrincipal.FindFirst(Constants.ClaimTypes.AccountId).Value);
 

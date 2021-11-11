@@ -36,7 +36,7 @@ namespace DblDip.Core.Models
 
         public void When(PhotoGalleryUpdated photoGalleryUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(PhotoGalleryRemoved photoGalleryRemoved)

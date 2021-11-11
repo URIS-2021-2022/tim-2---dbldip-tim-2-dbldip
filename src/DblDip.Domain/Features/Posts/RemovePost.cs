@@ -1,6 +1,5 @@
 using BuildingBlocks.Core;
 using BuildingBlocks.EventStore;
-using BuildingBlocks.EventStore;
 using DblDip.Core.Models;
 using FluentValidation;
 using MediatR;
@@ -52,7 +51,7 @@ namespace DblDip.Domain.Features
 
                 await _store.SaveChangesAsync(cancellationToken);
 
-                return new(); ;
+                return new();
             }
         }
     }

@@ -22,12 +22,12 @@ namespace DblDip.Core.Models
 
         protected override void EnsureValidState()
         {
-
+            throw new NotSupportedException();
         }
 
         public void Update()
         {
-
+            throw new NotSupportedException();
         }
     }
 }

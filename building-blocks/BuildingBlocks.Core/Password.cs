@@ -15,12 +15,12 @@ namespace BuildingBlocks.Core
         {
             if (length < 1 || length > 128)
             {
-                throw new ArgumentException(nameof(length));
+                throw new ArgumentException("Error, length should be between 1 and 128. \n You entered {0}" , nameof(length));
             }
 
             if (numberOfNonAlphanumericCharacters > length || numberOfNonAlphanumericCharacters < 0)
             {
-                throw new ArgumentException(nameof(numberOfNonAlphanumericCharacters));
+                throw new ArgumentException("Number of non alphanumeric characters shoulb be less than length but not 0! \n You entered: {0}", nameof(numberOfNonAlphanumericCharacters));
             }
 
             using (var rng = RandomNumberGenerator.Create())

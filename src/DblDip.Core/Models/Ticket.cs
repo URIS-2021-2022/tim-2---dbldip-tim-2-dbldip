@@ -34,7 +34,7 @@ namespace DblDip.Core.Models
 
         public void When(TicketUpdated ticketUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

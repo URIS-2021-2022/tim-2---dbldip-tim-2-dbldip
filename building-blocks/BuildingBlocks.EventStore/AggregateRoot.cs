@@ -11,7 +11,7 @@ namespace BuildingBlocks.EventStore
         [NotMapped]
         public IReadOnlyCollection<IEvent> DomainEvents => _events.AsReadOnly();
 
-        public AggregateRoot(IEnumerable<IEvent> events)
+        protected AggregateRoot(IEnumerable<IEvent> events)
         {
             GoThroughEvents(events);
         }

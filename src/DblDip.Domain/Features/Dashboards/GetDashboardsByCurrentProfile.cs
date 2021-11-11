@@ -35,7 +35,7 @@ namespace DblDip.Domain.Features
                 var dashboards = await _context.Dashboards
                     .Where(x => x.ProfileId == profileId)
                     .OrderBy(x => x.Created)
-                    .Select(x => x.ToDto()).ToListAsync();
+                    .Select(x => x.ToDto()).ToListAsync(cancellationToken);
 
                 return new (dashboards);
             }
