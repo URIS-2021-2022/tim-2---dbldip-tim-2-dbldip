@@ -14,7 +14,7 @@ namespace DblDip.Core.Models
 
         }
 
-        public void When(EngagementUpdated engagementUpdated)
+        public static void When(EngagementUpdated engagementUpdated)
         {
 
         }
