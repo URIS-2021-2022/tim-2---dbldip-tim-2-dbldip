@@ -83,6 +83,7 @@ namespace DblDip.Api.FunctionalTests
             httpResponseMessage.EnsureSuccessStatusCode();
 
             var sut = await context.FindAsync<Discount>(discount.DiscountId);
+            Assert.NotNull(sut);
 
         }
 

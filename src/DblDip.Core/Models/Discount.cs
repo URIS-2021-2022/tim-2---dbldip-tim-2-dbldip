@@ -19,7 +19,7 @@ namespace DblDip.Core.Models
             DiscountId = discountCreated.DiscountId;
         }
 
-        public void When(DiscountUpdated discountUpdated)
+        public static void When(DiscountUpdated discountUpdated)
         {
             throw new NotSupportedException();
         }

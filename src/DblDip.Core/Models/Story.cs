@@ -32,7 +32,7 @@ namespace DblDip.Core.Models
             _taskReferences = new List<TaskReference>();
         }
 
-        public void When(StoryUpdated storyUpdated)
+        public static void When(StoryUpdated storyUpdated)
         {
 
         }
@@ -57,7 +57,7 @@ namespace DblDip.Core.Models
 
         }
 
-        public void Update()
+        public static void Update()
         {
 
         }

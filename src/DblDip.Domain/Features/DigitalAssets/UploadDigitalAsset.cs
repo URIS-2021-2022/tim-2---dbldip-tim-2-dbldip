@@ -42,7 +42,7 @@ namespace DblDip.Domain.Features
                 var digitalAssets = new List<DigitalAsset>();
 
                 if (!MultipartRequestHelper.IsMultipartContentType(httpContext.Request.ContentType))
-                    throw new Exception($"Expected a multipart request, but got {httpContext.Request.ContentType}");
+                    throw new ArgumentException($"Expected a multipart request, but got {httpContext.Request.ContentType}");
 
                 var mediaTypeHeaderValue = MediaTypeHeaderValue.Parse(httpContext.Request.ContentType);
 
