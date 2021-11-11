@@ -27,6 +27,7 @@ namespace DblDip.Api
     public static class Dependencies
     {
         private static readonly string path = "https://opensource.org/licenses/MIT";
+        private static string urllink = "https://example.com/terms";
         public static void Configure(IServiceCollection services, IConfiguration configuration)
         {
            
@@ -37,7 +38,7 @@ namespace DblDip.Api
                     Version = "v1",
                     Title = "Double Dip (DblDip)",
                     Description = "Photography Business Management Platform",
-                    TermsOfService = new Uri("https://example.com/terms"),
+                    TermsOfService = new Uri(urllink),
                     Contact = new OpenApiContact
                     {
                         Name = "Quinntyne Brown",
