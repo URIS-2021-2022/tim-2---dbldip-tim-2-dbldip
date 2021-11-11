@@ -81,6 +81,7 @@ namespace DblDip.Api.FunctionalTests
             httpResponseMessage.EnsureSuccessStatusCode();
 
             var sut = await context.FindAsync<Contact>(contact.ContactId);
+            Assert.NotNull(sut);
 
         }
 

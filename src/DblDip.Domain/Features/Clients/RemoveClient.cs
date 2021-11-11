@@ -13,9 +13,10 @@ namespace DblDip.Domain.Features
         public class Validator : AbstractValidator<Request>
         {
             public Validator()
+
             {
                 RuleFor(x => x.ClientId).NotNull();
-                RuleFor(x => x.ClientId).NotEqual(new Guid());
+                RuleFor(x => x.ClientId).NotEqual(Guid.Empty);
             }
         }
 

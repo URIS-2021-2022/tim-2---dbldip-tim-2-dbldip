@@ -41,7 +41,7 @@ namespace DblDip.Domain.Features
                 var account = await _context.FindAsync<Account>(profile.AccountId);
 
                 if (account.UserId != user.UserId)
-                    throw new Exception("Security Exception");
+                    throw new ArgumentException("Security Exception");
 
                 account.SetDefaultProfileId(request.ProfileId);
 
