@@ -6,7 +6,7 @@ namespace DblDip.Testing.Builders
 {
     public class WeddingBuilder
     {
-        private Wedding _wedding;
+        private readonly Wedding _wedding;
 
         public static Wedding WithDefaults(Rate photographyRate)
         {
@@ -29,5 +29,13 @@ namespace DblDip.Testing.Builders
         {
             return _wedding;
         }
+
+        public WeddingBuilder(Wedding _wedding1)
+        {
+            _wedding = _wedding1;
+        }
     }
+
+    
+
 }
