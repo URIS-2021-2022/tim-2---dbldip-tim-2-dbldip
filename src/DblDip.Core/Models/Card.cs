@@ -34,7 +34,7 @@ namespace DblDip.Core.Models
 
         public void When(CardUpdated cardUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()
