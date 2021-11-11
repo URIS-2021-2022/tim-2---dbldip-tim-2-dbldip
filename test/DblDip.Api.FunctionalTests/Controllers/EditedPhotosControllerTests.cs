@@ -84,6 +84,8 @@ namespace DblDip.Api.FunctionalTests
 
             var sut = await context.FindAsync<EditedPhoto>(editedPhoto.EditedPhotoId);
 
+            Assert.NotNull(sut);
+
         }
 
         [Fact]
