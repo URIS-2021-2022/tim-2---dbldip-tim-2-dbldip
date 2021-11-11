@@ -23,7 +23,7 @@ namespace DblDip.Core.Models
             ExpenseId = expenseCreated.ExpenseId;
         }
 
-        public void When(ExpenseUpdated expenseUpdated)
+        public static void When(ExpenseUpdated expenseUpdated)
         {
 
         }

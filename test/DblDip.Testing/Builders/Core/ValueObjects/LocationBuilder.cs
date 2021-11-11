@@ -28,5 +28,10 @@ namespace DblDip.Testing.Builders
         {
             return _location;
         }
+
+        public LocationBuilder(DblDip.Core.ValueObjects.Location _location1)
+        {
+            _location = _location1;
+        }
     }
 }

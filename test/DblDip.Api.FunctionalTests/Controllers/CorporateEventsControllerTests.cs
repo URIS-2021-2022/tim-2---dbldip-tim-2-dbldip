@@ -59,6 +59,7 @@ namespace DblDip.Api.FunctionalTests
             httpResponseMessage.EnsureSuccessStatusCode();
 
             var removedCorporateEvent = await context.FindAsync<CorporateEvent>(corporateEvent.CorporateEventId);
+            Assert.NotNull(removedCorporateEvent);
 
             //Assert.NotEqual(default, removedCorporateEvent.Deleted);
         }
@@ -81,7 +82,7 @@ namespace DblDip.Api.FunctionalTests
             httpResponseMessage.EnsureSuccessStatusCode();
 
             var sut = await context.FindAsync<CorporateEvent>(corporateEvent.CorporateEventId);
-
+            Assert.NotNull(sut);
         }
 
         [Fact]

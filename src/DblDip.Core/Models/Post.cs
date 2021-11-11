@@ -61,7 +61,7 @@ namespace DblDip.Core.Models
         {
             if(string.IsNullOrEmpty(this.Title))
             {
-                throw new Exception();
+                throw new ArgumentNullException();
             }
         }
 

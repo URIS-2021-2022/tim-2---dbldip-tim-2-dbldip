@@ -37,7 +37,7 @@ namespace DblDip.Core.Models
             _taskReferences = new List<TaskReference>();
         }
 
-        public void When(StoryUpdated storyUpdated)
+        public static void When(StoryUpdated storyUpdated)
         {
             throw new NotSupportedException();
         }
@@ -62,7 +62,7 @@ namespace DblDip.Core.Models
 
         }
 
-        public void Update()
+        public static void Update()
         {
             throw new NotSupportedException();
         }

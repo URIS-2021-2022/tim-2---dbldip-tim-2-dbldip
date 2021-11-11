@@ -38,8 +38,9 @@ namespace DblDip.Data
                 void AddRoleIfDoesntExists(IEventStore store, Guid roleId, string name)
                 {
 
+                    var role = store.FindAsync<Role>(roleId).GetAwaiter().GetResult();
 
-                    var role = store.FindAsync<Role>(roleId).GetAwaiter().IsCompleted ? store.FindAsync<Role>(roleId).GetAwaiter().GetResult() : new Role(roleId, name);
+                    role ??= new Role(roleId, name);
 
                     if (role.DomainEvents.Any())
                     {
@@ -51,7 +52,7 @@ namespace DblDip.Data
             }
         }
 
-        internal class CardConfiguration
+        internal static class CardConfiguration
         {
             public static void Seed(IEventStore store, IDblDipDbContext context)
             {
