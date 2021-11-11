@@ -31,7 +31,7 @@ namespace DblDip.Core.Models
 
         public static void When(BoardUpdated boardUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(BoardRemoved boardRemoved)
