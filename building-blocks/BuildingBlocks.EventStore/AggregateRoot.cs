@@ -13,8 +13,14 @@ namespace BuildingBlocks.EventStore
 
         public AggregateRoot(IEnumerable<IEvent> events)
         {
-            foreach (var @event in events) { When(@event); 
-            //
+            GoThroughEvents(events);
+        }
+
+        public void GoThroughEvents(IEnumerable<IEvent> events)
+        {
+            foreach (var @event in events)
+            {
+                When(@event);
             }
         }
 

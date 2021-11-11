@@ -68,13 +68,13 @@ namespace DblDip.Core.Models
         protected override void EnsureValidState()
         {
             if (Parts == null)
-                throw new Exception("Model Invalid. Parts can not be null.");
+                throw new ArgumentNullException("Model Invalid. Parts can not be null.");
 
             foreach (var part in Parts)
             {
                 if (Parts.Any(x => (x.Scheduled.Overlap(part.Scheduled) && x != part)))
                 {
-                    throw new Exception("Model Invalid. Parts overlap");
+                    throw new ArgumentNullException("Model Invalid.Parts overlap");
                 }
             }
         }

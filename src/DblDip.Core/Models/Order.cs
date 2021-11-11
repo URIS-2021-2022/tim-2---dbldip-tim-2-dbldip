@@ -28,7 +28,7 @@ namespace DblDip.Core.Models
 
         }
 
-        public void When(OrderPaid paid)
+        public static void When(OrderPaid paid)
         {
 
         }
@@ -38,7 +38,7 @@ namespace DblDip.Core.Models
             Deleted = orderRemoved.Deleted;
         }
 
-        public void When(OrderUpdated orderUpdated)
+        public static void When(OrderUpdated orderUpdated)
         {
 
         }

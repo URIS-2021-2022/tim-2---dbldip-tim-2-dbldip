@@ -21,7 +21,7 @@ namespace DblDip.Core.Models
         }
         protected override void When(dynamic @event) => When(@event);
 
-        public void When(ConversationUpdated conversationUpdated)
+        public static void When(ConversationUpdated conversationUpdated)
         {
 
         }
