@@ -46,7 +46,7 @@ namespace DblDip.Api
                     License = new OpenApiLicense
                     {
                         Name = "Use under MIT",
-                        Url = new Uri("https://opensource.org/licenses/MIT")
+                        Url = new Uri("https://opensource.org/licenses/MIT"),
                     }
                 });
 
