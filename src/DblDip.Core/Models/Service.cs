@@ -38,12 +38,12 @@ namespace DblDip.Core.Models
 
         public void When(ServiceUpdated serviceUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(ServiceRemoved serviceRemoved)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()
@@ -54,7 +54,7 @@ namespace DblDip.Core.Models
 
         public void Update(string value)
         {
-
+            throw new NotSupportedException();
         }
 
         public void Remove(DateTime deleted)

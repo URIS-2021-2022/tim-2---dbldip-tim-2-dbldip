@@ -11,8 +11,9 @@ namespace BuildingBlocks.Core
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
         ValueTask<TEntity> FindAsync<TEntity>(params object[] keyValues) where TEntity : class;
-        EntityEntry<TEntity> Add<TEntity>(TEntity entity) where TEntity : class;
         ValueTask<object> FindAsync(Type entityType, params object[] keyValues);
+        EntityEntry<TEntity> Add<TEntity>(TEntity entity) where TEntity : class;
+       
         ChangeTracker ChangeTracker { get; }
     }
 }

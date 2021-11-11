@@ -21,7 +21,7 @@ namespace DblDip.Core.Models
 
         public void When(DiscountUpdated discountUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(DiscountRemoved discountRemoved)
