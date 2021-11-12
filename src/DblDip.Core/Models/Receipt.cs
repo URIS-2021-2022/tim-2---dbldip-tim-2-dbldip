@@ -25,9 +25,9 @@ namespace DblDip.Core.Models
             Deleted = receiptRemoved.Deleted;
         }
 
-        public void When(ReceiptUpdated receiptUpdated)
+        public static void When(ReceiptUpdated receiptUpdated)
         {
-
+            //do nothing
         }
 
         protected override void EnsureValidState()

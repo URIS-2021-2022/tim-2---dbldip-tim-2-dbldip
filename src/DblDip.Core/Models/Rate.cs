@@ -44,7 +44,7 @@ namespace DblDip.Core.Models
 
         }
 
-        public void Update()
+        public static void Update()
         {
 
         }

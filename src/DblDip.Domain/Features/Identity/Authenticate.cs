@@ -84,7 +84,7 @@ namespace DblDip.Domain.Features
 
             }
 
-            public bool ValidateUser(User user, string transformedPassword)
+            public static bool ValidateUser(User user, string transformedPassword)
             {
                 if (user == null || transformedPassword == null)
                     return false;

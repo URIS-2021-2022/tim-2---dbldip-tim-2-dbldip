@@ -26,7 +26,7 @@ namespace DblDip.Core.Models
             throw new NotSupportedException();
         }
 
-        public void When(ProjectManagerUpdated projectManagerUpdated)
+        public static void When(ProjectManagerUpdated projectManagerUpdated)
         {
 
         }
