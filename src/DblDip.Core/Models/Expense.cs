@@ -25,7 +25,7 @@ namespace DblDip.Core.Models
 
         public static void When(ExpenseUpdated expenseUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(ExpenseRemoved expenseRemoved)

@@ -16,7 +16,7 @@ namespace DblDip.Core.Models
 
         public static void When(EngagementUpdated engagementUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

@@ -26,7 +26,6 @@ namespace DblDip.Api
 {
     public static class Dependencies
     {
-        private static string path = "https://opensource.org/licenses/MIT";
         private static string urllink = "https://example.com/terms";
         private static string urlOpenSource = "https://opensource.org/licenses/MIT";
         public static void Configure(IServiceCollection services, IConfiguration configuration)

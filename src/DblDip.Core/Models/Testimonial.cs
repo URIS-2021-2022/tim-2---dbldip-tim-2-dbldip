@@ -17,17 +17,17 @@ namespace DblDip.Core.Models
         {
             Apply(new TestimonialCreated(Guid.NewGuid()));
         }
-        public void When(TestimonialCreated testimonialCreated)
+        public static void When(TestimonialCreated testimonialCreated)
         {
 
         }
 
-        public void When(TestimonialRemoved testimonialRemoved)
+        public static void When(TestimonialRemoved testimonialRemoved)
         {
 
         }
 
-        public void When(TestimonialUpdated testimonialUpdated)
+        public static void When(TestimonialUpdated testimonialUpdated)
         {
 
         }

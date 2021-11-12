@@ -35,7 +35,7 @@ namespace DblDip.Core.Models
 
         public static void When(EquipmentUpdated equipmentUpdated)
         {
-  
+            throw new NotSupportedException();
         }
 
         public void When(EquipmentRemoved equipmentRemoved)
