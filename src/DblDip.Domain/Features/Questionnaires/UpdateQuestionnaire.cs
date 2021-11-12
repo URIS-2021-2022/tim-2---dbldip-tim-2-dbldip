@@ -40,7 +40,7 @@ namespace DblDip.Domain.Features
 
                 var questionnaire = await _store.FindAsync<Questionnaire>(request.Questionnaire.QuestionnaireId);
 
-                questionnaire.Update();
+                Questionnaire.Update();
 
                 _store.Add(questionnaire);
 

@@ -40,7 +40,7 @@ namespace DblDip.Domain.Features
 
                 var corporateEvent = await _store.FindAsync<CorporateEvent>(request.CorporateEvent.CorporateEventId);
 
-                corporateEvent.Update();
+                CorporateEvent.Update();
 
                 _store.Add(corporateEvent);
 
