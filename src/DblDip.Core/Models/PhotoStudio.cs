@@ -20,7 +20,7 @@ namespace DblDip.Core.Models
             PhotoStudioId = photoStudioCreated.PhotoStudioId;
         }
 
-        public void When(PhotoStudioUpdated photoStudioUpdated)
+        public static void When(PhotoStudioUpdated photoStudioUpdated)
         {
 
         }

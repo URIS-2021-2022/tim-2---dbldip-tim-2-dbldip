@@ -15,7 +15,7 @@ namespace DblDip.Core.Models
 
         protected override void When(dynamic @event) => When(@event);
 
-        public void When(EditedPhotoUpdated editedPhotoUpdated)
+        public static void When(EditedPhotoUpdated editedPhotoUpdated)
         {
 
         }

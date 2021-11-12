@@ -38,7 +38,7 @@ namespace DblDip.Domain.Features
 
                 var story = await _store.FindAsync<Story>(request.Story.StoryId);
 
-                story.Update();
+                Story.Update();
 
                 _store.Add(story);
 

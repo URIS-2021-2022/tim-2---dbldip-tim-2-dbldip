@@ -38,7 +38,7 @@ namespace DblDip.Domain.Features
 
                 var paymentSchedule = await _store.FindAsync<PaymentSchedule>(request.PaymentSchedule.PaymentScheduleId);
 
-                paymentSchedule.Update();
+                PaymentSchedule.Update();
 
                 _store.Add(paymentSchedule);
 

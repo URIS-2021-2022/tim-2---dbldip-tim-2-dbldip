@@ -28,7 +28,7 @@ namespace DblDip.Core.Models
                 When(@event);
             }
         }
-        public void When(PhotoGallerySent sent)
+        public static void When(PhotoGallerySent sent)
         {
 
         }
@@ -53,7 +53,7 @@ namespace DblDip.Core.Models
             Apply(new PhotoGallerySent(default));
         }
 
-        public void Update()
+        public static void Update()
         {
 
         }
