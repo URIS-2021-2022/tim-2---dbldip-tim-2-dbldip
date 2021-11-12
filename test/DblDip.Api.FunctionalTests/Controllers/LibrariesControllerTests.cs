@@ -84,6 +84,7 @@ namespace DblDip.Api.FunctionalTests
 
             var sut = await context.FindAsync<Library>(library.LibraryId);
 
+            Assert.NotNull(sut);
         }
 
         [Fact]

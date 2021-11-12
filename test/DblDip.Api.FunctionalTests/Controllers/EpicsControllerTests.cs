@@ -84,6 +84,7 @@ namespace DblDip.Api.FunctionalTests
 
             var sut = await context.FindAsync<Epic>(epic.EpicId);
 
+            Assert.NotNull(sut);
         }
 
         [Fact]
