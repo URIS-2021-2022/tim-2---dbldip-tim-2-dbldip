@@ -26,6 +26,8 @@ namespace DblDip.Domain.Features
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
+                await System.Threading.Tasks.Task.Delay(2000, cancellationToken);
+
                 return new Response()
                 {
                     EditedPhotos = _context.Set<EditedPhoto>().Select(x => x.ToDto()).ToList()

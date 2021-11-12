@@ -30,7 +30,7 @@ namespace DblDip.Core.Models
         }
         public static void When(PhotoGallerySent sent)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(PhotographyProjectRemoved photographyProjectRemoved)
@@ -55,7 +55,7 @@ namespace DblDip.Core.Models
 
         public static void Update()
         {
-
+            throw new NotSupportedException();
         }
     }
 }

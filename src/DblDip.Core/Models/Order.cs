@@ -30,7 +30,7 @@ namespace DblDip.Core.Models
 
         public static void When(OrderPaid paid)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(OrderRemoved orderRemoved)
@@ -40,7 +40,7 @@ namespace DblDip.Core.Models
 
         public static void When(OrderUpdated orderUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         protected override void EnsureValidState()

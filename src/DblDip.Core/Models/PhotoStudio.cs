@@ -22,7 +22,7 @@ namespace DblDip.Core.Models
 
         public static void When(PhotoStudioUpdated photoStudioUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(PhotoStudioRemoved photoStudioRemoved)

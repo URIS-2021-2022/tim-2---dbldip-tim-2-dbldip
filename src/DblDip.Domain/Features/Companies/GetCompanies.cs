@@ -26,6 +26,7 @@ namespace DblDip.Domain.Features
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
+                await System.Threading.Tasks.Task.Delay(2000, cancellationToken);
                 return new Response()
                 {
                     Companies = _context.Set<Company>().Select(x => x.ToDto()).ToList()

@@ -70,14 +70,11 @@ namespace DblDip.Core.Models
             if (Parts == null)
 
                 throw new ArgumentNullException("Model Invalid. Parts can not be null.");
-
-            foreach (var part in Parts)
+            foreach (var _ in from part in Parts
+                              where Parts.Any(x => (x.Scheduled.Overlap(part.Scheduled) && x != part))
+                              select new { })
             {
-                if (Parts.Any(x => (x.Scheduled.Overlap(part.Scheduled) && x != part)))
-                {
-                    throw new ArgumentNullException("Model Invalid.Parts overlap");
-                }
-
+                throw new ArgumentNullException("Model Invalid.Parts overlap");
             }
         }
 

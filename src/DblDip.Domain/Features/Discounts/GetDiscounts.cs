@@ -25,7 +25,10 @@ namespace DblDip.Domain.Features
             public Handler(IDblDipDbContext context) => _context = context;
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken) {
-			    return new Response() { 
+
+                await System.Threading.Tasks.Task.Delay(2000, cancellationToken);
+
+                return new Response() { 
                     Discounts = _context.Set<Discount>().Select(x => x.ToDto()).ToList()
                 };
             }

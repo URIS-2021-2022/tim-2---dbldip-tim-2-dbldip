@@ -15,7 +15,10 @@ namespace DblDip.Core.Models
         public bool IsDefault { get; private set; }
         public DateTime? Deleted { get; private set; }
         public DateTime? Created { get; private set; }
-        public IEnumerable<DashboardCard> DashboardCards => _dashboardCards.ToList();
+        public IEnumerable<DashboardCard> DashboardCards()
+        { 
+                return _dashboardCards.ToList(); 
+        }
 
         protected Dashboard()
         {
