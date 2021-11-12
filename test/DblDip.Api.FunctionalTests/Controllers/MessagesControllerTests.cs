@@ -84,6 +84,8 @@ namespace DblDip.Api.FunctionalTests
 
             var sut = await context.FindAsync<Message>(message.MessageId);
 
+            Assert.NotNull(sut);
+
         }
 
         [Fact]

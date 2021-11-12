@@ -52,7 +52,7 @@ namespace BuildingBlocks.EventStore
 
         public void Add(IAggregateRoot aggregateRoot) => _trackedAggregates.Add(aggregateRoot);
 
-        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var aggregateRoot in _trackedAggregates)
             {

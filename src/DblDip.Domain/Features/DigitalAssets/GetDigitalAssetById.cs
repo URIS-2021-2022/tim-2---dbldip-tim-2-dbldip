@@ -27,11 +27,13 @@ namespace DblDip.Domain.Features
 
             public Handler(IDblDipDbContext context) => _context = context;
 
-            public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
-                => new Response
+            public async Task<Response> Handle(Request request, CancellationToken cancellationToken) {
+                await System.Threading.Tasks.Task.Delay(2000, cancellationToken);
+                return new Response
                 {
                     DigitalAsset = _context.Set<DigitalAsset>().FirstOrDefault(x => x.DigitalAssetId == request.DigitalAssetId).ToDto()
                 };
+            }
         }
     }
 }
