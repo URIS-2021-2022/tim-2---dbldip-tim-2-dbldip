@@ -40,7 +40,7 @@ namespace DblDip.Domain.Features
 
                 var referral = await _store.FindAsync<Referral>(request.Referral.ReferralId);
 
-                referral.Update();
+                Referral.Update();
 
                 _store.Add(referral);
 

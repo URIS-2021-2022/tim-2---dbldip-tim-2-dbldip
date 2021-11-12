@@ -36,6 +36,7 @@ namespace DblDip.Core.Models
 
         public static void Update()
         {
+            throw new NotSupportedException();
         }
 
         public void Remove(DateTime deleted)

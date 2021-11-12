@@ -21,6 +21,12 @@ namespace BuildingBlocks.Stripe
         {
 
         }
+
+        protected PaymentException(SerializationInfo info, StreamingContext context) 
+            : base(info, context)
+        {
+
+        }
     }
     public class PaymentProcessor : IPaymentProcessor
     {

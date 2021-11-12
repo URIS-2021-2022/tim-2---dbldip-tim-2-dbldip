@@ -49,9 +49,9 @@ namespace DblDip.Core.Models
             });
         }
 
-        public void When(SurveyUpdated surveyUpdated)
+        public static void When(SurveyUpdated surveyUpdated)
         {
-
+            throw new NotSupportedException();
         }
 
         public void When(SurveyRemoved surveyRemoved)
