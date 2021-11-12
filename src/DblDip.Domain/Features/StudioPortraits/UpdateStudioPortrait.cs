@@ -40,7 +40,7 @@ namespace DblDip.Domain.Features
 
                 var studioPortrait = await _store.FindAsync<StudioPortrait>(request.StudioPortrait.StudioPortraitId);
 
-                studioPortrait.Update();
+                StudioPortrait.Update();
 
                 _store.Add(studioPortrait);
 

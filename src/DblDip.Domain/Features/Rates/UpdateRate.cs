@@ -40,7 +40,7 @@ namespace DblDip.Domain.Features
 
                 var rate = await _store.FindAsync<Rate>(request.Rate.RateId);
 
-                rate.Update();
+                Rate.Update();
 
                 _store.Add(rate);
 
